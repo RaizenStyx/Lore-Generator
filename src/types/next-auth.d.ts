@@ -1,5 +1,5 @@
 // types/next-auth.d.ts
-import NextAuth from "next-auth"
+import type { NextAuth } from "next-auth" // Keeps TypeScript happy
 
 declare module "next-auth" {
   interface Session {
