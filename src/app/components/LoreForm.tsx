@@ -3,6 +3,7 @@
 import { useState, useTransition } from 'react'
 import { generateLore } from '@/app/actions/generateLore'
 import LoreCard from './LoreCard'
+import { Session } from 'next-auth'
 
 import { SparklesIcon } from '@heroicons/react/24/solid'
 
@@ -20,7 +21,7 @@ const samplePrompts = [
   {
     text: "A galaxy-spanning empire on the brink of civil war, fractured by political intrigue and ancient prophecies.",
     type: "world",
-    genre: "sci-fi"
+    genre: "scifi"
   },
   {
     text: "A street-level hacker uncovers a corporate conspiracy that threatens the entire city's data network.",
@@ -35,11 +36,11 @@ const samplePrompts = [
   {
     text: "A clandestine organization of bio-engineered super-soldiers, operating beyond government control.",
     type: "faction",
-    genre: "sci-fi"
+    genre: "scifi"
   },
 ]
 
-export default function LoreForm({ session }: { session: any }) {
+export default function LoreForm({ session }: { session: Session }) {
   const [prompt, setPrompt] = useState('')
   const [type, setType] = useState('character')
   const [genre, setGenre] = useState('general')
@@ -64,6 +65,7 @@ export default function LoreForm({ session }: { session: any }) {
   return (
     <main className="flex-grow grid grid-cols-1 lg:grid-cols-3 gap-8 p-6 lg:p-8">
       <section className="lg:col-span-1 space-y-6 p-6 bg-slate-400 rounded-xl shadow-tech border border-slate-700">
+       <p className="text-sm text-gray-300">Signed in as {session?.user?.email}</p>
         <h1 className="flex justify-center text-center text-3xl font-bold text-gray-300 tracking-wide">
           Generate New Lore with The Lore Forge
         </h1>
@@ -112,7 +114,7 @@ export default function LoreForm({ session }: { session: any }) {
             >
               <option value="general">General</option>
               <option value="fantasy">Fantasy</option>
-              <option value="sci-fi">Sci-Fi</option>
+              <option value="scifi">scifi</option>
               <option value="cyberpunk">Cyberpunk</option>
               <option value="historical">Historical</option>
               <option value="horror">Horror</option>
