@@ -1,11 +1,9 @@
 // types/next-auth.d.ts
-import type { NextAuth } from "next-auth" // Keeps TypeScript happy
+import type { Session } from "next-auth"
 
 declare module "next-auth" {
   interface Session {
-    user: {
-      name?: string | null
-      email?: string | null
+    user: Session["user"] & {
       role?: "developer" | "user"
     }
   }
