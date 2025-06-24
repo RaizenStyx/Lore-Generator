@@ -21,7 +21,7 @@ const samplePrompts = [
   {
     text: "A galaxy-spanning empire on the brink of civil war, fractured by political intrigue and ancient prophecies.",
     type: "world",
-    genre: "scifi"
+    genre: "sci-fi"
   },
   {
     text: "A street-level hacker uncovers a corporate conspiracy that threatens the entire city's data network.",
@@ -36,7 +36,7 @@ const samplePrompts = [
   {
     text: "A clandestine organization of bio-engineered super-soldiers, operating beyond government control.",
     type: "faction",
-    genre: "scifi"
+    genre: "sci-fi"
   },
 ]
 
@@ -114,7 +114,7 @@ export default function LoreForm({ session }: { session: Session }) {
             >
               <option value="general">General</option>
               <option value="fantasy">Fantasy</option>
-              <option value="scifi">scifi</option>
+              <option value="sci-fi">Sci-Fi</option>
               <option value="cyberpunk">Cyberpunk</option>
               <option value="historical">Historical</option>
               <option value="horror">Horror</option>

@@ -13,6 +13,18 @@ export default async function Home() {
     redirect('/coming-soon')
   }
 
+  if (session?.user?.role !== 'developer') {
+  return (
+    <main className="flex items-center justify-center min-h-screen text-center bg-gray-900 text-white">
+      <div>
+        <h1 className="text-4xl font-bold mb-4">Lore Forge Coming Soon!</h1>
+        <p className="text-lg">The Lore Forge will launch publicly soon. Only developer testing is available right now.</p>
+      </div>
+    </main>
+  )
+}
+
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 font-sans">
       <header className="py-4 px-6 flex justify-between items-center bg-slate-700 shadow-lg border-b border-slate-700">
