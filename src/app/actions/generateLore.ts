@@ -57,6 +57,18 @@ function getServiceAccountJSON(): ServiceAccountKey {
   try {
     const jsonString = Buffer.from(base64, 'base64').toString('utf8');
     const parsedJson: ServiceAccountKey = JSON.parse(jsonString);
+
+    // --- ADD THIS CONSOLE.LOG ---
+    console.log('Successfully decoded and parsed service account JSON:');
+    console.log({
+      project_id: parsedJson.project_id,
+      client_email: parsedJson.client_email,
+      // DO NOT LOG private_key for security reasons
+    });
+
+    // --- END CONSOLE.LOG ---
+
+
     // Basic validation to ensure it's a service account key
     if (!parsedJson.private_key || !parsedJson.client_email) {
       throw new Error('Decoded JSON is not a valid service account key structure.');
@@ -73,17 +85,20 @@ export async function generateLore(prompt: string, type: string, genre: string):
   let client: OAuth2Client; // Explicitly type the client
 
   try {
+    const serviceAccountKey = getServiceAccountJSON(); // Get the parsed JSON (we know this works)
+
     const auth = new GoogleAuth({
-      credentials: getServiceAccountJSON(), // Uses the parsed, typed JSON
+      credentials: serviceAccountKey, // Use the parsed service account key
       scopes: ['https://www.googleapis.com/auth/cloud-platform'],
     });
-    client = await auth.getClient() as OAuth2Client; // Assert client type
-  } catch (authError) {
-    console.error("Authentication failed:", authError);
+    client = await auth.getClient() as OAuth2Client; // Get the authenticated client
+  } catch (authError: any) {
+    console.error("SERVER ERROR: Authentication with Google Cloud failed:", authError.message || authError);
+    console.error("SERVER ERROR: Full authentication error object:", authError);
     throw new Error("Failed to authenticate with Google Cloud. Check credentials.");
   }
 
-  // Ensure projectId is available from environment variables
+    // Ensure projectId is available from environment variables
   const projectId = process.env.GCP_PROJECT_ID;
   if (!projectId) {
     console.error("GCP_PROJECT_ID environment variable not set.");
