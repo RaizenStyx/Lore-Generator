@@ -92,8 +92,8 @@ export async function generateLore(prompt: string, type: string, genre: string):
       scopes: ['https://www.googleapis.com/auth/cloud-platform'],
     });
     client = await auth.getClient() as OAuth2Client; // Get the authenticated client
-  } catch (authError: any) {
-    console.error("SERVER ERROR: Authentication with Google Cloud failed:", authError.message || authError);
+  } catch (authError: unknown) {
+    console.error("SERVER ERROR: Authentication with Google Cloud failed:", authError);
     console.error("SERVER ERROR: Full authentication error object:", authError);
     throw new Error("Failed to authenticate with Google Cloud. Check credentials.");
   }
@@ -102,7 +102,7 @@ export async function generateLore(prompt: string, type: string, genre: string):
   const projectId = process.env.GCP_PROJECT_ID;
   if (!projectId) {
     console.error("GCP_PROJECT_ID environment variable not set.");
-    throw new  Error("Server configuration error: Google Cloud Project ID missing.");
+    throw new Error("Server configuration error: Google Cloud Project ID missing.");
   }
 
   // Model URL (This looks correct based on Google's pattern for publisher models)
