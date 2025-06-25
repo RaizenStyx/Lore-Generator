@@ -77,6 +77,7 @@ export default function LoreForm({ session }: { session: Session }) {
     setPrompt(sample.text)
     setType(sample.type)
     setGenre(sample.genre)
+    setTitle(sample.text);
   }
 
   // const handleDummyPromptClick = (lore: typeof dummyLoreData[0]) => {
@@ -216,7 +217,7 @@ export default function LoreForm({ session }: { session: Session }) {
           </div>
         )}
       </section>
-      <p className="text-sm text-gray-300">{session?.user?.name}'s previous prompts... (Future Idea)</p>
+      <p className="text-sm text-gray-300">{session?.user?.name}&apos;s previous prompts... (Future Idea)</p>
     </main>
   )
 }

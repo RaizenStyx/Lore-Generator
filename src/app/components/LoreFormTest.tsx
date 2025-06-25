@@ -12,7 +12,7 @@ type LoreType = 'character' | 'faction' | 'world' | 'quest';
 
 export default function LoreFormTestPage({ session }: { session: Session }) {
   const [prompt, setPrompt] = useState('')
-  const [type, setType] = useState('character')
+  const [type, setType] = useState<LoreType>('character')
   const [genre, setGenre] = useState('general')
   const [title, setTitle] = useState('Title')
   const [result, setResult] = useState('')
@@ -20,7 +20,7 @@ export default function LoreFormTestPage({ session }: { session: Session }) {
 
 // --- Filtered Test Lore Data (for display in buttons) ---
   const filteredTestLore = testLoreEntries.filter(entry => {
-    return (type === 'general' || entry.type === type) &&
+    return (type === 'character' || entry.type === type) &&
            (genre === 'general' || entry.genre === genre);
   });
   
@@ -68,7 +68,7 @@ export default function LoreFormTestPage({ session }: { session: Session }) {
               className="cursor-pointer w-full p-3 rounded-lg bg-gray-950 text-gray-50 border border-gray-700 focus:ring-2 focus:ring-cyan-400 appearance-none bg-no-repeat bg-right-center pr-8 custom-select-arrow"
               style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%2322D3EE' d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E")`, backgroundSize: '1.25em', backgroundPosition: 'right 0.75em center' }}
               value={type}
-              onChange={(e) => setType(e.target.value)}
+              onChange={(e) => setType(e.target.value as LoreType)} // Cast to LoreType
             >
               <option value="character">Character Lore</option>
               <option value="faction">Faction Lore</option>

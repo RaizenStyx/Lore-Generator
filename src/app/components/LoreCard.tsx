@@ -78,7 +78,7 @@ export default function LoreCard({ title, content, prompt, genre, type }: LoreCa
       {/* Lore Content */}
         <div className={`${!prompt ? 'pt-0' : 'pt-6'}`}>
          <h3 className="text-xl font-semibold text-gray-50 mb-4 flex items-center gap-2"> 
-           <DocumentTextIcon className="h-5 w-5 text-cyan-400" /> The Lore Forge's Output:
+           <DocumentTextIcon className="h-5 w-5 text-cyan-400" /> The Lore Forge&apos;s Output:
           </h3>
           <div className="bg-gray-950 p-6 rounded-lg font-mono text-gray-50 whitespace-pre-wrap leading-relaxed border border-gray-700 max-h-[calc(100vh-350px)] overflow-y-auto custom-scrollbar shadow-inner">
             {content}

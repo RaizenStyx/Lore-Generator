@@ -25,7 +25,7 @@ export default async function ComingSoon() {
       <span className="block text-fuchsia-500 mt-2">Crafting Worlds.</span>
     </h1>
     <p className="text-lg text-gray-50 leading-relaxed text-center sm:text-left opacity-90 animate-fade-in delay-200">
-      You've stumbled upon the digital foundry where narratives ignite. Lore Forge is your AI-powered co-creator, designed to streamline your game development workflow by generating rich, detailed lore with unprecedented ease.
+      You&apos;ve stumbled upon the digital foundry where narratives ignite. Lore Forge is your AI-powered co-creator, designed to streamline your game development workflow by generating rich, detailed lore with unprecedented ease.
     </p>
     <div className="flex justify-center sm:justify-start pt-6">
         <Link href="/test-forge" className="bg-cyan-400 text-gray-950 px-8 py-4 rounded-lg font-bold text-xl uppercase tracking-wider shadow-lg hover:bg-fuchsia-500 transition-all duration-300 transform hover:scale-105 active:scale-95 animate-fade-in delay-50 flex items-center gap-3">
@@ -41,10 +41,10 @@ export default async function ComingSoon() {
     </h2>
     <div className="text-lg text-gray-50 leading-relaxed space-y-4">
       <p>
-        Say goodbye to writer's block and endless brainstorming. With Lore Forge, you can swiftly generate compelling narratives for your characters, intricate histories for your factions, expansive backstories for your worlds, and detailed outlines for your quests. Simply provide a high-level prompt, select your desired genre, and watch as our advanced AI brings your concepts to life.
+        Say goodbye to writer&apos;s block and endless brainstorming. With Lore Forge, you can swiftly generate compelling narratives for your characters, intricate histories for your factions, expansive backstories for your worlds, and detailed outlines for your quests. Simply provide a high-level prompt, select your desired genre, and watch as our advanced AI brings your concepts to life.
       </p>
       <p className="italic text-gray-400">
-        "Accelerate your creativity. Focus on building your game, not getting stuck on lore."
+        &quot;Accelerate your creativity. Focus on building your game, not getting stuck on lore.&quot;
       </p>
     </div>
 
@@ -56,7 +56,7 @@ export default async function ComingSoon() {
         <h3 className="text-xl font-bold text-cyan-400 flex items-center gap-2">
           <AdjustmentsVerticalIcon className="h-6 w-6" /> Customizable AI Models
         </h3>
-        <p>Train the AI on your specific game's lore, style guides, and tone to generate truly unique narratives that fit seamlessly into your universe.</p>
+        <p>Train the AI on your specific game&apos;s lore, style guides, and tone to generate truly unique narratives that fit seamlessly into your universe.</p>
       </div>
       <div className="space-y-3 p-4 bg-gray-950 rounded-lg border border-gray-800 shadow-inner">
         <h3 className="text-xl font-bold text-cyan-400 flex items-center gap-2">
@@ -81,7 +81,7 @@ export default async function ComingSoon() {
     {/* Call to Action: Support Us */}
     <div className="pt-10 border-t border-gray-700 mt-10 text-center">
       <h2 className="text-3xl font-bold text-gray-50 mb-6 flex items-center justify-center gap-3">
-        <HeartIcon className="h-8 w-8 text-fuchsia-500" /> Support Lore Forge's Vision
+        <HeartIcon className="h-8 w-8 text-fuchsia-500" /> Support Lore Forge&apos;s Vision
       </h2>
       <p className="text-lg text-gray-50 leading-relaxed mb-8">
         Lore Forge is a passion project, built by a solo developer dedicated to empowering game creators. If you believe in this vision and want to see Lore Forge grow, consider supporting its development. Your contributions fuel future features and ensure this tool remains accessible to all.
