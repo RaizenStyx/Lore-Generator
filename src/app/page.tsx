@@ -16,7 +16,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 font-sans">
+    <div className="min-h-screen flex flex-col bg-gray-950 font-sans">
 
       <Navbar session={session} />
 

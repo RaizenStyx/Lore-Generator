@@ -93,7 +93,7 @@ export default async function ComingSoon() {
     <LinkIcon className="h-6 w-6 mr-2" /> Support Development
   </a>
   <p className="text-lg text-gray-50 leading-relaxed mt-8">
-    Donate now to get a free notion template with all the lore examples and prompts used in this demo, plus exclusive updates on new features and releases.
+   Click the link to donate now and/or to get a free notion template for writting down ideas about articles you&apos;ve read, and to help fund the continued development of Lore Forge. Your support makes a difference!
   </p>
 </div>
 </section>

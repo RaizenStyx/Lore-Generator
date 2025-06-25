@@ -45,7 +45,7 @@ export default function LoreFormTestPage({ session }: { session: Session }) {
         {/* Prompt Input */}
         <div className="space-y-3">
           <label htmlFor="prompt" className="block font-medium text-gray-50 text-lg mb-1">
-            Craft Your Lore Prompt:
+            Craft Your Lore Prompt: (Disabled for demo)
           </label>
           <textarea
             disabled
