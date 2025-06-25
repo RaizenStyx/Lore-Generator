@@ -17,7 +17,7 @@ export default async function ComingSoon() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 font-sans">
       <Navbar session={session} />
-       <div className="flex-grow grid grid-cols-1 lg:grid-cols-3 gap-8 p-6 lg:p-8 bg-gray-950 text-gray-50"> {/* Main content area using the grid layout */}
+       <div className="flex-grow grid grid-cols-1 lg:grid-cols-3 gap-8 p-6 lg:p-8 bg-gray-950 text-gray-50">
   {/* Left Column: Hero & Intro (Full width on small, 1/3 on large) */}
   <section className="lg:col-span-1 space-y-8 p-8 bg-gray-900 rounded-xl shadow-xl ring-1 ring-cyan-400/20 border border-gray-700 flex flex-col justify-center">
     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-cyan-400 leading-tight tracking-tighter text-center sm:text-left animate-fade-in">
@@ -76,26 +76,29 @@ export default async function ComingSoon() {
         </h3>
         <p>Export lore directly into popular game engines, documentation formats, or connect via API for dynamic in-game content.</p>
       </div>
-    </div>
-
-    {/* Call to Action: Support Us */}
-    <div className="pt-10 border-t border-gray-700 mt-10 text-center">
-      <h2 className="text-3xl font-bold text-gray-50 mb-6 flex items-center justify-center gap-3">
-        <HeartIcon className="h-8 w-8 text-fuchsia-500" /> Support Lore Forge&apos;s Vision
-      </h2>
-      <p className="text-lg text-gray-50 leading-relaxed mb-8">
-        Lore Forge is a passion project, built by a solo developer dedicated to empowering game creators. If you believe in this vision and want to see Lore Forge grow, consider supporting its development. Your contributions fuel future features and ensure this tool remains accessible to all.
-      </p>
-      <a href="https://6801801549663.gumroad.com/l/nayuj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-fuchsia-500 text-gray-950 px-8 py-4 rounded-lg font-bold text-xl uppercase tracking-wider shadow-lg hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105 active:scale-95">
-        <LinkIcon className="h-6 w-6 mr-2" /> Support Development
-      </a>
-      <p className="text-lg text-gray-50 leading-relaxed mt-8">
-        Donate now to get a free notion template with all the lore examples and prompts used in this demo, plus exclusive updates on new features and releases.
-      </p>
-    </div>
+    </div>    
   </section>
 </div>
-      <Footer session={session} />
-    </div>
+  <div className="flex-grow grid grid-cols-1 lg:grid-cols-1 gap-8 p-6 lg:p-8 bg-gray-950 text-gray-50">
+<section className="space-y-10 p-8 bg-gray-900 rounded-xl shadow-xl ring-1 ring-cyan-400/20 border border-gray-700 flex flex-col justify-start">
+{/* Call to Action: Support Us */}
+<div className="pt-10  mb-10 text-center">
+  <h2 className="text-3xl font-bold text-gray-50 mb-6 flex items-center justify-center gap-3">
+    <HeartIcon className="h-8 w-8 text-fuchsia-500" /> Support Lore Forge&apos;s Vision
+  </h2>
+  <p className="text-lg text-gray-50 leading-relaxed mb-8">
+    Lore Forge is a passion project, built by a solo developer dedicated to empowering game creators. If you believe in this vision and want to see Lore Forge grow, consider supporting its development. Your contributions fuel future features and ensure this tool remains accessible to all.
+  </p>
+  <a href="https://6801801549663.gumroad.com/l/nayuj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-fuchsia-500 text-gray-950 px-8 py-4 rounded-lg font-bold text-xl uppercase tracking-wider shadow-lg hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105 active:scale-95">
+    <LinkIcon className="h-6 w-6 mr-2" /> Support Development
+  </a>
+  <p className="text-lg text-gray-50 leading-relaxed mt-8">
+    Donate now to get a free notion template with all the lore examples and prompts used in this demo, plus exclusive updates on new features and releases.
+  </p>
+</div>
+</section>
+</div>
+  <Footer session={session} />
+</div>
   )
 }
