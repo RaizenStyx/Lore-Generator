@@ -1,18 +1,14 @@
 import { redirect } from 'next/navigation'
 import { auth } from '@/auth'
-import LoreForm from './components/LoreForm'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import LoreFormTestPage from '../components/LoreFormTest'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
-export default async function Home() {
+export default async function TestForgePage() {
   const session = await auth()
 
   if (!session) {
     redirect('/api/auth/signin')
-  }
-
-  if (session?.user?.role !== 'developer') {
-    redirect('/coming-soon')
   }
 
   return (
@@ -20,10 +16,9 @@ export default async function Home() {
 
       <Navbar session={session} />
 
-      <LoreForm session={session} />
+      <LoreFormTestPage session={session} />
 
       <Footer session={session} />
-
       
     </div>
   )

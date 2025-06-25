@@ -17,7 +17,7 @@ export const authOptions: NextAuthOptions = {
     //   return allowedEmails.includes(user.email!)
     // },
     async session({ session }) {
-      if (session?.user?.email === "c.alexreed@gmail.com") {
+      if (session?.user?.email === process.env.NEXT_PUBLIC_AUTHORIZED_FORGE_EMAIL) {
         session.user.role = "developer"
       } else {
         session.user.role = "user"

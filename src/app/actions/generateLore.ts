@@ -93,9 +93,35 @@ export async function generateLore(prompt: string, type: string, genre: string):
     });
     client = await auth.getClient() as OAuth2Client; // Get the authenticated client
   } catch (authError: unknown) {
-    console.error("SERVER ERROR: Authentication with Google Cloud failed:", authError);
-    console.error("SERVER ERROR: Full authentication error object:", authError);
-    throw new Error("Failed to authenticate with Google Cloud. Check credentials.");
+    // console.error("SERVER ERROR: Authentication with Google Cloud failed:", authError);
+    // console.error("SERVER ERROR: Full authentication error object:", authError);
+    // throw new Error("Failed to authenticate with Google Cloud. Check credentials.");
+     // Now, we need to narrow the type of `error`
+    let errorMessage = "An unknown authentication error occurred.";
+    let fullErrorObject: unknown = authError; // Keep the original error object for full logging
+
+    if (authError instanceof Error) {
+      errorMessage = authError.message;
+      fullErrorObject = authError; // If it's an Error instance, use it directly
+    } else if (
+      typeof authError === 'object' &&
+      authError !== null &&
+      'message' in authError &&
+      typeof (authError as { message: unknown }).message === 'string'
+    ) {
+      // For objects that are not direct Error instances but have a message property
+      errorMessage = (authError as { message: string }).message;
+      fullErrorObject = authError;
+    } else {
+      // Fallback for truly unexpected error types
+      errorMessage = String(authError); // Convert anything to a string
+      fullErrorObject = authError;
+    }
+
+    console.error("SERVER ERROR: Authentication with Google Cloud failed:", errorMessage);
+    console.error("SERVER ERROR: Full authentication error object:", fullErrorObject);
+    throw new Error(`Failed to authenticate with Google Cloud: ${errorMessage}. Check credentials.`); // Use the extracted message
+
   }
 
     // Ensure projectId is available from environment variables

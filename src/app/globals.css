@@ -7,9 +7,8 @@
 }
 
 html {
-  /* Softer light mode background and default text colors */
-  background-color: #F8FAFC; /* A very light, subtle gray (similar to Tailwind's neutral-50/gray-50) */
-  color: #171717; /* Dark text for light mode */
+  background-color: #F8FAFC; 
+  color: #171717; 
 }
 
 body {
@@ -18,34 +17,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar styles */
+/* Custom scrollbar styles - using standard Tailwind colors */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1C35; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00E0FF; 
+  border-radius: 10px;
+  border: 1px solid #3A3A60; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A020F0; 
+}
+
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
-  height: 8px; /* Height of the scrollbar for horizontal scrolling */
+  width: 10px; /* Wider scrollbar for more presence */
+  height: 10px; /* For horizontal scrollbars */
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Light mode track */
-  border-radius: 10px;
-}
-
-.dark .custom-scrollbar::-webkit-scrollbar-track {
-  background: #2D3748; /* Dark mode track (secondary-dark) */
+  background: #10102b; /* Slightly lighter than bg-gray-950, very dark blue */
+  border-radius: 5px; /* Slightly rounded corners */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888; /* Light mode thumb */
-  border-radius: 10px;
-}
-
-.dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #63B3ED; /* Dark mode thumb (accent-blue) */
+  background-color: rgba(34, 211, 238, 0.7); /* cyan-400 with 70% opacity */
+  border-radius: 5px; /* Matches track radius */
+  border: 1px solid rgba(55, 65, 81, 0.5); /* Semi-transparent gray-700 border */
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4); /* Subtle glow effect */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Light mode thumb on hover */
-}
-
-.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #9F7AEA; /* Dark mode thumb on hover (accent-purple) */
+  background-color: rgba(162, 28, 255, 0.8); /* fuchsia-500 with 80% opacity */
+  box-shadow: 0 0 12px rgba(162, 28, 255, 0.6); /* Stronger glow on hover */
 }
